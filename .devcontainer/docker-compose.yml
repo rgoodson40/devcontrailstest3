@@ -1,0 +1,17 @@
+name: "devcontainer-with-dockercompose-test-compose-stack2"
+
+services:
+
+  app:
+    image: "ruby:3.2.5"
+    # build:
+    #   context: ..
+    #   dockerfile: .devcontainer/Dockerfile
+    #   target: develop
+    command: tail -f /dev/null
+    networks:
+      - custom_network
+
+networks:
+  custom_network:
+    driver: bridge
